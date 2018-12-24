@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kenneth Young Castro"]
   spec.email         = ["kenneth.young90@gmail.com"]
 
-  spec.summary       = %q{"This is a summary"}
-  # spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{"CLI for displaying info about countries."}
+  spec.description   = %q{"A cli of countries based on the REST Countries API. It allows you to look for information on countries based on population, region, currency, subregion, name, capital, language, and countries with a given initial substring."}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
