@@ -1,0 +1,54 @@
+# CLI Controller
+class Country::CLI
+    
+    def call
+        puts "Information about countries around the world!"
+        user_input = nil
+        while(user_input != 10)
+            case user_input
+            when 1
+                puts "In development"
+            when 2
+                puts "In development"
+            when 3
+                puts "In development"
+            when 4
+                puts "In development"
+            when 5
+                puts "In development"
+            when 6
+                puts "In development"
+            when 7
+                puts "In development"
+            when 8
+                puts "In development"
+            when 9
+                puts "In development"
+            when 10
+            else
+                puts "Option does not exist. Please enter a correct option."
+            end 
+            display_options
+            user_input = gets.chomp.to_i
+        end
+        goodbye
+    end 
+    
+    def display_options 
+        puts "Enter an option (1-10): "
+        puts "1. All country names"
+        puts "2. Search country by name"
+        puts "3. Search countries that start with given letter"
+        puts "4. Search countries with given currency symbol"
+        puts "5. Search countries with given language"
+        puts "6. Search countries with certain population: highest, lowest, higher or lower than a given"
+        puts "7. search by capital"
+        puts "8. search by region"
+        puts "9. search by subregion"
+        puts "10. exit"
+    end 
+    
+    def goodbye
+        puts "Exited the gem. Have a nice day! =)"
+    end 
+end 
