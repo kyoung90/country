@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "Country/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "Country"
+  spec.name          = "countries_cli"
   spec.version       = Country::VERSION
   spec.authors       = ["Kenneth Young Castro"]
   spec.email         = ["kenneth.young90@gmail.com"]
