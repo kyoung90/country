@@ -1,13 +1,28 @@
+require_relative 'country'
+require 'pry'
+require 'open-uri'
+require 'json'
 # CLI Controller
 class Country::CLI
+
+    def initialize()
+       # Get all countries from API in JSON format
+        page = open("https://restcountries.eu/rest/v2/all")
+        countries = JSON.parse(page.read)
+        # Parse JSON to objects
+        countries.each do |country|
+            Country::COUNTRY.new(country)
+        end 
+    end 
     
     def call
         puts "Information about countries around the world!"
-        user_input = nil
+        display_options
+        user_input = gets.chomp.to_i
         while(user_input != 10)
             case user_input
             when 1
-                puts "In development"
+                list_all_country_names
             when 2
                 puts "In development"
             when 3
@@ -48,7 +63,12 @@ class Country::CLI
         puts "10. exit"
     end 
     
+    def list_all_country_names
+        Country::COUNTRY.all_country_names
+    end 
+    
     def goodbye
         puts "Exited the gem. Have a nice day! =)"
     end 
 end 
+

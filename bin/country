@@ -3,4 +3,5 @@
 require "bundler/setup"
 require "Country"
 
-Country::CLI.new.call
+controller = Country::CLI.new
+controller.call
