@@ -61,7 +61,7 @@ class Country::CLI
         puts "5. Search countries with given currency symbol"
         puts "6. Search countries with given language"
         puts "7. Search countries with certain population"
-        puts "8. All countries sorted by population(ascending or descending)"
+        puts "8. Display all countries sorted by population(ascending or descending)"
         puts "9. Search by capital"
         puts "10. Search by region"
         puts "11. Search by subregion"
