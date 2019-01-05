@@ -38,11 +38,11 @@ class Country::CLI
             when 8
                 list_all_countries_sorted_by_population
             when 9
-                puts "In development"
+                search_by_capital
             when 10
-                puts "In development"
+                search_by_region
             when 11
-                puts "In development"
+                search_by_subregion
             when 12
             else
                 puts "Option does not exist. Please enter a correct option."
@@ -99,7 +99,7 @@ class Country::CLI
         puts "Please enter the currency symbol: "
         input = gets.chomp
         countries = Country::COUNTRY.search_all_with_currency_symbol(input)
-        if countries
+        if countries.count > 0
             countries.each do |country|
                 country.info
                 puts "\n"
@@ -113,7 +113,7 @@ class Country::CLI
         puts "Please enter the currency name: "
         input = gets.chomp
         countries = Country::COUNTRY.search_all_with_currency_name(input)
-        if countries
+        if countries.count > 0
             countries.each do |country|
                 country.info
                 puts "\n"
@@ -127,7 +127,7 @@ class Country::CLI
         puts "Please enter a language: "
         input = gets.chomp
         countries = Country::COUNTRY.search_all_with_language(input)
-        if countries
+        if countries.count > 0
             countries.each do |country|
                 country.info
                 puts "\n"
@@ -145,7 +145,7 @@ class Country::CLI
             puts "Enter population: "
             population = gets.chomp.to_i
             countries = Country::COUNTRY.search_all_with_population(input, population)
-            if countries
+            if countries.count > 0
                 countries.each do |country|
                     country.info
                     puts "\n"
@@ -178,6 +178,45 @@ class Country::CLI
             list_all_countries_sorted_by_population
         end
     end 
+    
+    def search_by_capital
+        puts "Please enter the capital: "
+        input = gets.chomp
+        country = Country::COUNTRY.search_by_capital(input)
+        if country
+            country.info
+        else 
+            puts "Invalid capital. Please enter a valid capital."
+        end
+    end 
+    
+    def search_by_region
+        puts "Please enter the region: "
+        input = gets.chomp
+        countries = Country::COUNTRY.search_by_region(input)
+        if countries.count > 0
+            countries.each do |country|
+                country.info
+                puts "\n"
+            end
+        else 
+            puts "Invalid region. Please enter a valid region."
+        end
+    end
+    
+    def search_by_subregion
+        puts "Please enter the subregion: "
+        input = gets.chomp
+        countries = Country::COUNTRY.search_by_subregion(input)
+        if countries.count > 0
+            countries.each do |country|
+                country.info
+                puts "\n"
+            end
+        else 
+            puts "Invalid subregion. Please enter a valid subregion."
+        end
+    end
     
     def goodbye
         puts "Exited the gem. Have a nice day! =)"

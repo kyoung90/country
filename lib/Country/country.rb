@@ -11,6 +11,15 @@ class Country::COUNTRY
                 self.send(("#{attribute}="), value)
             end
         end
+        if self.capital == ""
+            self.capital = "n/a"
+        end 
+        if self.region == ""
+            self.region = "n/a"
+        end 
+        if self.subregion == ""
+            self.subregion = "n/a"
+        end 
         @@all << self
     end 
     
@@ -86,5 +95,17 @@ class Country::COUNTRY
         elsif comparison == "g" 
             self.all.select{|country| country.population > population}.sort_by{|country| country.population}
         end 
+    end 
+    
+    def self.search_by_capital(capital)
+        self.all.detect{|country| country.capital.downcase == capital.downcase}
+    end 
+    
+    def self.search_by_region(region)
+        self.all.select{|country| country.region.downcase == region.downcase}
+    end 
+    
+    def self.search_by_subregion(subregion)
+        self.all.select{|country| country.subregion.downcase == subregion.downcase}
     end 
 end 
