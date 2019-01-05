@@ -79,6 +79,7 @@ class Country::CLI
         country = Country::COUNTRY.search_by_name(input)
         if country
             country.info
+            puts "\n"
         else 
             puts "Invalid name. Please list all the countries and choose a name from there."
         end 
@@ -90,6 +91,7 @@ class Country::CLI
         country = Country::COUNTRY.search_by_suffix(input)
         if country
             country.info
+            puts "\n"
         else 
             puts "Country with given suffix not found."
         end 
@@ -142,7 +144,7 @@ class Country::CLI
         input = gets.chomp
         
         if input.downcase == "l" || input.downcase == "lower" || input.downcase == "g" || input.downcase == "greater" || input.downcase == "h" || input.downcoase == "higher"
-            puts "Enter population: "
+            puts "Enter population (ex: 10000): "
             population = gets.chomp.to_i
             countries = Country::COUNTRY.search_all_with_population(input, population)
             if countries.count > 0
@@ -166,6 +168,7 @@ class Country::CLI
             countries_sorted = Country::COUNTRY.all.sort{|country1, country2| country2.population <=> country1.population}
             countries_sorted.each do |country|
                 country.info
+                puts "\n"
             end 
         elsif input == "a" 
             countries_sorted = Country::COUNTRY.all.sort{|country1, country2| country1.population <=> country2.population}
@@ -185,6 +188,7 @@ class Country::CLI
         country = Country::COUNTRY.search_by_capital(input)
         if country
             country.info
+            puts "\n"
         else 
             puts "Invalid capital. Please enter a valid capital."
         end
