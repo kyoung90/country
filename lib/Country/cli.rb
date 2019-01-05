@@ -19,7 +19,7 @@ class Country::CLI
         puts "Information about countries around the world!"
         display_options
         user_input = gets.chomp.to_i
-        while(user_input != 11)
+        while(user_input != 12)
             case user_input
             when 1
                 list_all_country_names
@@ -34,7 +34,7 @@ class Country::CLI
             when 6
                 search_by_language
             when 7
-                puts "In development"
+                search_by_certain_population
             when 8
                 puts "In development"
             when 9
@@ -135,6 +135,28 @@ class Country::CLI
         else 
             puts "No countries with given language were found."
         end
+    end 
+    
+    def search_by_certain_population
+        puts "Greater(g) than or lower(l) than?"
+        input = gets.chomp
+        
+        if input.downcase == "l" || input.downcase == "lower" || input.downcase == "g" || input.downcase == "greater" || input.downcase == "h" || input.downcoase == "higher"
+            puts "Enter population: "
+            population = gets.chomp.to_i
+            countries = Country::COUNTRY.search_all_with_population(input, population)
+            if countries
+                countries.each do |country|
+                    country.info
+                    puts "\n"
+                end 
+            else 
+                puts "No countries with given language were found."
+            end
+        else
+            puts "Wrong input. Please try again.\n"
+            search_by_certain_population
+        end 
     end 
     
     def goodbye
