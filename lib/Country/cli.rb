@@ -28,7 +28,7 @@ class Country::CLI
             when 3
                 search_by_suffix
             when 4
-                puts "In development"
+                search_by_currency
             when 5
                 puts "In development"
             when 6
@@ -86,6 +86,18 @@ class Country::CLI
             country.info
         else 
             puts "Country with given suffix not found."
+        end 
+    end 
+    
+    def search_by_currency
+        puts "Please enter the currency: "
+        input = gets.chomp
+        countries = Country::COUNTRY.search_all_with_currency(input)
+        if countries
+            countries.each do |country|
+                country.info
+                puts "\n"
+            end 
         end 
     end 
     
