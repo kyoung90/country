@@ -35,7 +35,7 @@ class Country::COUNTRY
     end
     
     def self.search_by_name(name)
-        self.all.detect{|country| country.name == name}
+        self.all.detect{|country| country.name.downcase == name.downcase}
     end 
     
     def info
