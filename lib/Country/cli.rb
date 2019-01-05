@@ -56,7 +56,7 @@ class Country::CLI
         puts "Enter an option (1-12): "
         puts "1. Display all country names"
         puts "2. Search country by name"
-        puts "3. Search countries that start with given letter"
+        puts "3. Search country by suffix"
         puts "4. Search countries with given currency name"
         puts "5. Search countries with given currency symbol"
         puts "6. Search countries with given language"

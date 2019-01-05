@@ -48,7 +48,7 @@ class Country::COUNTRY
     end 
     
     def self.search_by_suffix(suffix)
-        self.all.detect{|country| country.name.match(/^(#{suffix})/)}
+        self.all.detect{|country| country.name.downcase.match(/^(#{suffix.downcase})/)}
     end 
     
     def self.search_all_with_currency_symbol(currency_symbol)
