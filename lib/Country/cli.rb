@@ -142,7 +142,7 @@ class Country::CLI
         puts "Greater(g) than or lower(l) than?"
         input = gets.chomp
         
-        if input.downcase == "l" || input.downcase == "lower" || input.downcase == "g" || input.downcase == "greater" || input.downcase == "h" || input.downcoase == "higher"
+        if input.downcase == "l" || input.downcase == "lower" || input.downcase == "g" || input.downcase == "greater" || input.downcase == "h" || input.downcase == "higher"
             puts "Enter population (ex: 10000): "
             population = gets.chomp.to_i
             countries = Country::COUNTRY.search_all_with_population(input, population)
@@ -152,7 +152,7 @@ class Country::CLI
                     puts "\n"
                 end 
             else 
-                puts "No countries with given language were found."
+                puts "No countries with the specified population were found."
             end
         else
             puts "Wrong input. Please try again.\n"
