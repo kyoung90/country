@@ -24,4 +24,23 @@ class Country::COUNTRY
             puts "#{i+1}. #{country.name}" 
         end
     end
+    
+    def self.search_by_name(name)
+        self.all.detect{|country| country.name == name}
+    end 
+    
+    def info
+        puts "Name: #{self.name}"
+        puts "Capital: #{self.capital}"
+        puts "Currencies: #{self.currencies}"
+        puts "Languages: #{self.languages}"
+        puts "Population: #{self.population}"
+        puts "Flag: #{self.flag}"
+        puts "Region: #{self.region}"
+        puts "Subregion: #{self.subregion}"
+    end 
+    
+    def self.search_by_suffix(suffix)
+        self.all.detect{|country| country.name.match(/^(#{suffix})/)}
+    end 
 end 

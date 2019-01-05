@@ -24,9 +24,9 @@ class Country::CLI
             when 1
                 list_all_country_names
             when 2
-                puts "In development"
+                search_by_name
             when 3
-                puts "In development"
+                search_by_suffix
             when 4
                 puts "In development"
             when 5
@@ -65,6 +65,28 @@ class Country::CLI
     
     def list_all_country_names
         Country::COUNTRY.all_country_names
+    end 
+    
+    def search_by_name 
+        puts "Please enter the name: "
+        input = gets.chomp
+        country = Country::COUNTRY.search_by_name(input)
+        if country
+            country.info
+        else 
+            puts "Invalid name. Please list all the countries and choose a name from there."
+        end 
+    end 
+    
+    def search_by_suffix
+        puts "Please enter the suffix: "
+        input = gets.chomp
+        country = Country::COUNTRY.search_by_suffix(input)
+        if country
+            country.info
+        else 
+            puts "Country with given suffix not found."
+        end 
     end 
     
     def goodbye
