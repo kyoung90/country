@@ -36,7 +36,7 @@ class Country::CLI
             when 7
                 search_by_certain_population
             when 8
-                puts "In development"
+                list_all_countries_sorted_by_population
             when 9
                 puts "In development"
             when 10
@@ -62,7 +62,7 @@ class Country::CLI
         puts "5. Search countries with given currency symbol"
         puts "6. Search countries with given language"
         puts "7. Search countries with certain population"
-        puts "8. All countries sorted by population(lowest or highest)"
+        puts "8. All countries sorted by population(ascending or descending)"
         puts "9. Search by capital"
         puts "10. Search by region"
         puts "11. Search by subregion"
@@ -157,6 +157,26 @@ class Country::CLI
             puts "Wrong input. Please try again.\n"
             search_by_certain_population
         end 
+    end 
+    
+    def list_all_countries_sorted_by_population
+        puts "Ascending(a) or descending(d)?"
+        input = gets.chomp
+        if input == "d" 
+            countries_sorted = Country::COUNTRY.all.sort{|country1, country2| country2.population <=> country1.population}
+            countries_sorted.each do |country|
+                country.info
+            end 
+        elsif input == "a" 
+            countries_sorted = Country::COUNTRY.all.sort{|country1, country2| country1.population <=> country2.population}
+            countries_sorted.each do |country|
+                country.info
+                puts "\n"
+            end 
+        else
+            puts "Did not understand command. Please enter a or d."
+            list_all_countries_sorted_by_population
+        end
     end 
     
     def goodbye
