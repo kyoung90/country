@@ -6,7 +6,6 @@ class Country::COUNTRY
     
     def initialize(attr_hash)
         attr_hash.each do |attribute, value|
-            # binding.pry
             if self.respond_to?(attribute)
                 self.send(("#{attribute}="), value)
             end
@@ -28,7 +27,6 @@ class Country::COUNTRY
     end 
     
     def self.all_country_names
-        # binding.pry
         self.all.each_with_index do |country, i|
             puts "#{i+1}. #{country.name}" 
         end

@@ -1,5 +1,4 @@
 require_relative 'country'
-require 'pry'
 require 'open-uri'
 require 'json'
 # CLI Controller
@@ -55,7 +54,7 @@ class Country::CLI
     
     def display_options 
         puts "Enter an option (1-12): "
-        puts "1. All country names"
+        puts "1. Display all country names"
         puts "2. Search country by name"
         puts "3. Search countries that start with given letter"
         puts "4. Search countries with given currency name"
