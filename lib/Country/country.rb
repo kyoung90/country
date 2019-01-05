@@ -82,9 +82,9 @@ class Country::COUNTRY
     
     def self.search_all_with_population(comparison, population)
         if comparison == "l" 
-            self.all.select{|country| country.population < population}
+            self.all.select{|country| country.population < population}.sort_by{|country| country.population}
         elsif comparison == "g" 
-            self.all.select{|country| country.population > population}  
+            self.all.select{|country| country.population > population}.sort_by{|country| country.population}
         end 
     end 
 end 
