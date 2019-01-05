@@ -50,8 +50,6 @@ class Country::COUNTRY
             country.currencies.each do |currency_info|
                 if currency_info["symbol"] == currency_symbol
                     bool = true
-                else 
-                    bool = false
                 end
             end 
             bool
@@ -64,11 +62,23 @@ class Country::COUNTRY
             country.currencies.each do |currency_info|
                 if currency_info["name"] && currency_info["name"].downcase == currency_name.downcase
                     bool = true
-                else 
-                    bool = false
                 end
             end 
             bool
         end 
     end 
+    
+    def self.search_all_with_language(language)
+        self.all.select do |country| 
+            bool = false
+            country.languages.each do |language_info|
+                if language_info["name"] && (language_info["name"].downcase == language.downcase || language_info["nativeName"].downcase == language.downcase)
+                    bool = true
+                end
+            end 
+            bool
+        end 
+    end 
+    
+    
 end 

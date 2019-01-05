@@ -19,7 +19,7 @@ class Country::CLI
         puts "Information about countries around the world!"
         display_options
         user_input = gets.chomp.to_i
-        while(user_input != 10)
+        while(user_input != 11)
             case user_input
             when 1
                 list_all_country_names
@@ -32,7 +32,7 @@ class Country::CLI
             when 5
                 search_by_currency_symbol
             when 6
-                puts "In development"
+                search_by_language
             when 7
                 puts "In development"
             when 8
@@ -40,6 +40,10 @@ class Country::CLI
             when 9
                 puts "In development"
             when 10
+                puts "In development"
+            when 11
+                puts "In development"
+            when 12
             else
                 puts "Option does not exist. Please enter a correct option."
             end 
@@ -50,18 +54,19 @@ class Country::CLI
     end 
     
     def display_options 
-        puts "Enter an option (1-11): "
+        puts "Enter an option (1-12): "
         puts "1. All country names"
         puts "2. Search country by name"
         puts "3. Search countries that start with given letter"
         puts "4. Search countries with given currency name"
         puts "5. Search countries with given currency symbol"
         puts "6. Search countries with given language"
-        puts "7. Search countries with certain population: highest, lowest, higher or lower than a given"
-        puts "8. search by capital"
-        puts "9. search by region"
-        puts "10. search by subregion"
-        puts "11. exit"
+        puts "7. Search countries with certain population"
+        puts "8. All countries sorted by population(lowest or highest)"
+        puts "9. Search by capital"
+        puts "10. Search by region"
+        puts "11. Search by subregion"
+        puts "12. Exit"
     end 
     
     def list_all_country_names
@@ -116,6 +121,20 @@ class Country::CLI
         else 
             puts "No countries with given currency name were found."
         end 
+    end 
+    
+    def search_by_language
+        puts "Please enter a language: "
+        input = gets.chomp
+        countries = Country::COUNTRY.search_all_with_language(input)
+        if countries
+            countries.each do |country|
+                country.info
+                puts "\n"
+            end 
+        else 
+            puts "No countries with given language were found."
+        end
     end 
     
     def goodbye
