@@ -44,13 +44,25 @@ class Country::COUNTRY
         self.all.detect{|country| country.name.match(/^(#{suffix})/)}
     end 
     
-    def self.search_all_with_currency(currency_symbol)
+    def self.search_all_with_currency_symbol(currency_symbol)
         self.all.select do |country| 
             bool = false
             country.currencies.each do |currency_info|
-                puts "currency_info: #{currency_info['symbol']}"
-                puts "currency_symbol: #{currency_symbol}"
                 if currency_info["symbol"] == currency_symbol
+                    bool = true
+                else 
+                    bool = false
+                end
+            end 
+            bool
+        end 
+    end 
+    
+    def self.search_all_with_currency_name(currency_name)
+        self.all.select do |country| 
+            bool = false
+            country.currencies.each do |currency_info|
+                if currency_info["name"] && currency_info["name"].downcase == currency_name.downcase
                     bool = true
                 else 
                     bool = false
