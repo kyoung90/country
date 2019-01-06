@@ -4,7 +4,7 @@ A CLI of countries based on the REST Countries API. It allows you to look for in
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -27,6 +27,10 @@ And then:
 ```
 country
 ```
+
+Now you should be seeing a menu similar to this: 
+
+![countries_cli menu](https://i.imgur.com/NA7eqEr.png)
 
 ## Contributing
 
