@@ -1,43 +1,87 @@
-# Country
+# countries_cli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Country`. To experiment with that code, run `bin/console` for an interactive prompt.
+A CLI of countries based on the REST Countries API. It allows you to look for information on countries based on population, region, currency, subregion, name, capital, and language.
 
-TODO: Delete this and the text above, and describe your gem
+## Getting Started
 
-## Installation
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Add this line to your application's Gemfile:
+### Prerequisites
 
-```ruby
-gem 'Country'
+What things you need to install the software and how to install them
+
+```
+Give examples
 ```
 
-And then execute:
+### Installing
 
-    $ bundle
+A step by step series of examples that tell you how to get a development env running
 
-Or install it yourself as:
+Say what the step will be
 
-    $ gem install Country
+```
+Give the example
+```
 
-## Usage
+And repeat
 
-TODO: Write usage instructions here
+```
+until finished
+```
 
-## Development
+End with an example of getting some data out of the system or using it for a little demo
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Running the tests
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/Country. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## Authors
+
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Code of Conduct
+## Acknowledgments
 
-Everyone interacting in the Country project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/Country/blob/master/CODE_OF_CONDUCT.md).
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
