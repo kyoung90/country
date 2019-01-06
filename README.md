@@ -32,6 +32,8 @@ Now you should be seeing a menu similar to this:
 
 ![countries_cli menu](https://i.imgur.com/NA7eqEr.png)
 
+Happy Searching! =)
+
 ## Contributing
 
 Please feel free to contribute :)
