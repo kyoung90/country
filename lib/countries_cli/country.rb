@@ -39,8 +39,19 @@ class CountriesCli::COUNTRY
     def info
         puts "Name: #{self.name}"
         puts "Capital: #{self.capital}"
-        puts "Currencies: #{self.currencies}"
-        puts "Languages: #{self.languages}"
+        print "Currencies: \n" 
+        self.currencies.each_with_index do |currency, index|
+                print "\t#{index+1}. code: #{currency["code"]}"
+                print ", name: #{currency["name"]}"
+                print ", symbol: #{currency["symbol"]}\n"
+        end 
+        print "Languages: \n"
+        self.languages.each_with_index do |language, index|
+                print "\t#{index+1}. iso639_1: #{language["iso639_1"]}"
+                print ", iso639_2: #{language["iso639_2"]}"
+                print ", name: #{language["name"]}"
+                print ", native name: #{language["nativeName"]}\n"
+        end 
         puts "Population: #{self.population}"
         puts "Flag: #{self.flag}"
         puts "Region: #{self.region}"
