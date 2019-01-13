@@ -2,7 +2,7 @@ require_relative 'country'
 require 'open-uri'
 require 'json'
 # CLI Controller
-class Country::CLI
+class CountriesCli::CLI
 
     def initialize()
        # Get all countries from API in JSON format
@@ -10,7 +10,7 @@ class Country::CLI
         countries = JSON.parse(page.read)
         # Parse JSON to objects
         countries.each do |country|
-            Country::COUNTRY.new(country)
+            CountriesCli::COUNTRY.new(country)
         end 
     end 
     
@@ -69,13 +69,13 @@ class Country::CLI
     end 
     
     def list_all_country_names
-        Country::COUNTRY.all_country_names
+        CountriesCli::COUNTRY.all_country_names
     end 
     
     def search_by_name 
         puts "Please enter the name: "
         input = gets.chomp
-        country = Country::COUNTRY.search_by_name(input)
+        country = CountriesCli::COUNTRY.search_by_name(input)
         if country
             country.info
             puts "\n"
@@ -87,7 +87,7 @@ class Country::CLI
     def search_by_suffix
         puts "Please enter the suffix: "
         input = gets.chomp
-        country = Country::COUNTRY.search_by_suffix(input)
+        country = CountriesCli::COUNTRY.search_by_suffix(input)
         if country
             country.info
             puts "\n"
@@ -99,7 +99,7 @@ class Country::CLI
     def search_by_currency_symbol
         puts "Please enter the currency symbol: "
         input = gets.chomp
-        countries = Country::COUNTRY.search_all_with_currency_symbol(input)
+        countries = CountriesCli::COUNTRY.search_all_with_currency_symbol(input)
         if countries.count > 0
             countries.each do |country|
                 country.info
@@ -113,7 +113,7 @@ class Country::CLI
     def search_by_currency_name
         puts "Please enter the currency name: "
         input = gets.chomp
-        countries = Country::COUNTRY.search_all_with_currency_name(input)
+        countries = CountriesCli::COUNTRY.search_all_with_currency_name(input)
         if countries.count > 0
             countries.each do |country|
                 country.info
@@ -127,7 +127,7 @@ class Country::CLI
     def search_by_language
         puts "Please enter a language: "
         input = gets.chomp
-        countries = Country::COUNTRY.search_all_with_language(input)
+        countries = CountriesCli::COUNTRY.search_all_with_language(input)
         if countries.count > 0
             countries.each do |country|
                 country.info
@@ -145,7 +145,7 @@ class Country::CLI
         if input.downcase == "l" || input.downcase == "lower" || input.downcase == "g" || input.downcase == "greater" || input.downcase == "h" || input.downcase == "higher"
             puts "Enter population (ex: 10000): "
             population = gets.chomp.to_i
-            countries = Country::COUNTRY.search_all_with_population(input, population)
+            countries = CountriesCli::COUNTRY.search_all_with_population(input, population)
             if countries.count > 0
                 countries.each do |country|
                     country.info
@@ -164,13 +164,13 @@ class Country::CLI
         puts "Ascending(a) or descending(d)?"
         input = gets.chomp
         if input == "d" 
-            countries_sorted = Country::COUNTRY.all.sort{|country1, country2| country2.population <=> country1.population}
+            countries_sorted = CountriesCli::COUNTRY.all.sort{|country1, country2| country2.population <=> country1.population}
             countries_sorted.each do |country|
                 country.info
                 puts "\n"
             end 
         elsif input == "a" 
-            countries_sorted = Country::COUNTRY.all.sort{|country1, country2| country1.population <=> country2.population}
+            countries_sorted = CountriesCli::COUNTRY.all.sort{|country1, country2| country1.population <=> country2.population}
             countries_sorted.each do |country|
                 country.info
                 puts "\n"
@@ -184,7 +184,7 @@ class Country::CLI
     def search_by_capital
         puts "Please enter the capital: "
         input = gets.chomp
-        country = Country::COUNTRY.search_by_capital(input)
+        country = CountriesCli::COUNTRY.search_by_capital(input)
         if country
             country.info
             puts "\n"
@@ -196,7 +196,7 @@ class Country::CLI
     def search_by_region
         puts "Please enter the region: "
         input = gets.chomp
-        countries = Country::COUNTRY.search_by_region(input)
+        countries = CountriesCli::COUNTRY.search_by_region(input)
         if countries.count > 0
             countries.each do |country|
                 country.info
@@ -210,7 +210,7 @@ class Country::CLI
     def search_by_subregion
         puts "Please enter the subregion: "
         input = gets.chomp
-        countries = Country::COUNTRY.search_by_subregion(input)
+        countries = CountriesCli::COUNTRY.search_by_subregion(input)
         if countries.count > 0
             countries.each do |country|
                 country.info

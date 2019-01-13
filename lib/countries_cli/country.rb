@@ -1,4 +1,4 @@
-class Country::COUNTRY
+class CountriesCli::COUNTRY
 
     attr_accessor :name, :currencies, :languages, :flag, :population, :capital, :region, :subregion
     
