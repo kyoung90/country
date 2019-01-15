@@ -65,13 +65,14 @@ class CountriesCli::COUNTRY
     
     def self.search_all_with_currency_symbol(currency_symbol)
         self.all.select do |country| 
-            bool = false
-            country.currencies.each do |currency_info|
-                if currency_info["symbol"] == currency_symbol
-                    bool = true
-                end
-            end 
-            bool
+            # bool = false
+            country.currencies.any? {|currency_info| currency_info["symbol"] == currency_symbol}
+            # country.currencies.each do |currency_info|
+            #     if currency_info["symbol"] == currency_symbol
+            #         bool = true
+            #     end
+            # end 
+            # bool
         end 
     end 
     
