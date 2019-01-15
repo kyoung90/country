@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "countries_cli"
+require_relative "../lib/countries_cli"
 
 controller = CountriesCli::CLI.new
 controller.call

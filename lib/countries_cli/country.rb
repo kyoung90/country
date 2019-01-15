@@ -36,7 +36,7 @@ class CountriesCli::COUNTRY
         self.all.detect{|country| country.name.downcase == name.downcase}
     end 
     
-    def info
+    def print_info
         puts "Name: #{self.name}"
         puts "Capital: #{self.capital}"
         print "Currencies: \n" 
