@@ -7,18 +7,19 @@ class CountriesCli::COUNTRY
     def initialize(attr_hash)
         attr_hash.each do |attribute, value|
             if self.respond_to?(attribute)
-                self.send(("#{attribute}="), value)
+                 
+                self.send(("#{attribute}="), value == "" ? "n/a": value)
             end
         end
-        if self.capital == ""
-            self.capital = "n/a"
-        end 
-        if self.region == ""
-            self.region = "n/a"
-        end 
-        if self.subregion == ""
-            self.subregion = "n/a"
-        end 
+        # if self.capital == ""
+        #     self.capital = "n/a"
+        # end 
+        # if self.region == ""
+        #     self.region = "n/a"
+        # end 
+        # if self.subregion == ""
+        #     self.subregion = "n/a"
+        # end 
         @@all << self
     end 
     
